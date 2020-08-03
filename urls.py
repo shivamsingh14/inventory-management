@@ -1,11 +1,8 @@
-from django.conf.urls import url
-from rest_framework import routers
+from django.urls import path, include
+from django.contrib import admin
 
-from app.stores.views import BoxViewSet
 
-router = routers.SimpleRouter()
-
-urlpatterns = []
-router.register(r'box', BoxViewSet, basename='box')
-
-urlpatterns += router.urls
+urlpatterns = [
+    path('api/admin/', admin.site.urls),
+    path('', include('app.stores.urls'), name='store'),
+]

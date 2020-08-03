@@ -1,26 +1,19 @@
+from django.conf import settings
+
 MAX_LENGTH_DICT = {
-    "SMALL": 10,
-    "NAME": 64,
-    "LANGUAGE": 100,
-    "EMAIL": 128,
-    "LONG": 2048
+    "SMALL": 1
 }
+
 ERROR_MESSAGES = {
-    "INVALID_OPEN_CLOSE_TIME": "opening time cannot be less than closing time",
-    "INVALID_DATE": "enter dates and dates entered should be greater than current date",
-    "INVALID_OPEN_CLOSE_DATE": "opening date cannot be less than closing date",
-    "INVALID_AUDI": "The requested auditorium id is not present",
-    "INVALID_LANGUAGE_CHOICE": "Movie is not available in selected language",
-    "INVALID_TYPE_CHOICE": "Movie is not available in selected format",
-    "INVALID_SLOT": "The requested slot is not available",
-    "ABSENT_DATE": "Date is required",
-    "SAME_PASSWORD_ERROR": "Old and New Password cannot be same",
-    "INCORRECT_PASSWORD": "Old Password is incorrect",
-    "INADEQUATE_SEATS_REQUESTED": "Requested number of seats are not allowed",
-    "KEY_ERROR": "the given key is not present",
-    "ALREADY_EXISTS": "Duplicate exists",
-    "NOT_FOUND": "detail not found"
+    "AVERAGE_AREA_MAX_REACHED": "The max average area exceeds permitted value",
+    "AVERAGE_VOLUME_MAX_REACHED": "The max average volume exceeds permitted value",
+    "BOX_ADDED_THIS_WEEK_MAX_REACHED": "The max number of boxes limit reached for this week",
+    "BOX_ADDED_THIS_WEEK_MAX_REACHED_BY_USER": "The max number of boxes added by a user limit reached for this week"
 }
-STATUS = {
-    "CANCELLED": "Cancelled"
+
+THRESHOLD_VALUES = {
+    "AREA": settings.A1,
+    "VOLUME_ADDED_BY_USER": settings.V1,
+    "TOTAL_BOXES_ADDED_IN_WEEK": settings.L1,
+    "TOTAL_BOXES_ADDED_IN_WEEK_BY_USER": settings.L2
 }
